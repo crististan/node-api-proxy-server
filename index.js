@@ -7,6 +7,12 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
+app.get('/', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.send("Welcome to my Node API Proxy Server.");
+});
+
 app.use('/tmdb-upcoming-movies', tmdbUpcomingMoviesRouter);
 
 app.use(cors());
